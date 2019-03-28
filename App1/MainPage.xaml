@@ -9,8 +9,8 @@
     <StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock FontSize="22" Text="Navn"/>
-            <TextBox x:Name="PlayerNumb" Width="100"></TextBox>
-            <Button Content="Start spil" Click="StartGame_Click"></Button>
+            <TextBox Name="PlayerNumb" Width="100"></TextBox>
+            <Button Content="Start nyt spil" Click="StartGame_Click"></Button>
             <Button Content="Flyt brik" Click="MovePiece_Click"></Button>
         </StackPanel>
         <Canvas Width="800" Height="570">

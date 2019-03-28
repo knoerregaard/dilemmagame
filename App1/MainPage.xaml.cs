@@ -26,26 +26,29 @@ namespace App1
         public int PositionX { get; set; }
         public int PositionY { get; set; }
         public List<Dilemma> DilemmaList;
-        Player player;
+        BoardGame boardGame;
 
         public MainPage()
         {
             this.InitializeComponent();
         }
-   
+
         private void ThrowDie_Click(object sender, RoutedEventArgs e)
         {
         }
         private void MovePiece_Click(object sender, RoutedEventArgs e)
         {
         }
-        
+
         private void AnimatePlayerMovement(Player player, int eyes)
         {
         }
 
         private void StartGame_Click(object sender, RoutedEventArgs e)
         {
+            boardGame = new BoardGame(PlayerNumb.Text);
+            //InitializeDilemmas();
+            //AnimateNewPlayerPiece();
         }
         private void InitPiece() { }
     }

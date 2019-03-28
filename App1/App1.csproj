@@ -119,6 +119,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BoardGame.cs" />
     <Compile Include="Die.cs" />
     <Compile Include="DiePage.xaml.cs">
       <DependentUpon>DiePage.xaml</DependentUpon>
@@ -137,9 +138,11 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="App1_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App1.csproj.user">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Assets\6525.jpg" />
     <Content Include="Assets\bg.jpg" />
     <Content Include="Assets\bgg.jpg" />

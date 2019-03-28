@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace App1
 {
-    class Player
+    public class Player
     {
 
         public int position { get; set; }
         public int[,] Path { get; set; }
-        public Player(int[,] path)
+        public string Name { get; set; }
+        public Player(int[,] path, string name)
         {
             //On initialization, the position is 0
             this.position = 0;
             this.Path = path;
+            this.Name = name;
         }
 
         public void MovePlayer(int eyes)
