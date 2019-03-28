@@ -31,6 +31,7 @@ namespace App1
         public MainPage()
         {
             this.InitializeComponent();
+            DilemmaFrame.Content = new DilemmaPage();
         }
    
         private void ThrowDie_Click(object sender, RoutedEventArgs e)

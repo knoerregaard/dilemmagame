@@ -8,7 +8,20 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="200" Height="300">
 
-    <Grid>
+    <Grid Background="DarkKhaki" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="91*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="52*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="QuestionBlock" Grid.Row="1" Text="" VerticalAlignment="Bottom" ></TextBlock>
+        <Button Name="Answer1Button" Click="Answer1Button_Click" Grid.Row="3" ></Button>
+        <Button Name="Answer2Button" Click="Answer2Button_Click" Grid.Row="4" ></Button>
+        <Button Name="Answer3Button" Click="Answer3Button_Click" Grid.Row="5" ></Button>
 
     </Grid>
 </Page>

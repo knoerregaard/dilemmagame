@@ -11,11 +11,17 @@ namespace App1
 
         public int position { get; set; }
         public int[,] Path { get; set; }
+        public int Points { get; set; }
         public Player(int[,] path)
         {
             //On initialization, the position is 0
             this.position = 0;
             this.Path = path;
+        }
+
+        public Player(int points)
+        {
+            Points += points;
         }
 
         public void MovePlayer(int eyes)
