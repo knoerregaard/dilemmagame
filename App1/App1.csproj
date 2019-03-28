@@ -119,13 +119,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="boardview.xaml.cs">
-      <DependentUpon>boardview.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Die.cs" />
     <Compile Include="DiePage.xaml.cs">
       <DependentUpon>DiePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dilemma.cs" />
     <Compile Include="DilemmaPage.xaml.cs">
       <DependentUpon>DilemmaPage.xaml</DependentUpon>
     </Compile>
@@ -160,10 +158,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="boardview.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="DiePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

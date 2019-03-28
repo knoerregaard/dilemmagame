@@ -23,107 +23,30 @@ namespace App1
     public sealed partial class MainPage : Page
     {
 
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int[,] Path { get; set; }
+        public int PositionX { get; set; }
+        public int PositionY { get; set; }
+        public List<Dilemma> DilemmaList;
         Player player;
-        List<Player> players;
 
         public MainPage()
         {
             this.InitializeComponent();
-
-            //Start position
-            this.X = 0;
-            this.Y = 0;
-
-            //Steps or Path
-            this.Path = new int[,] { { 0, 0 }, { 40, 50 }, { 95, 45 }, { 130, 0 }, { 110, -60 }, { 60, -100 }, { 0, -140 }, { -40, -200 }, { -30, -280 } };
-
-            // New player
-            player = new Player(this.Path);
         }
-    
-    
+   
         private void ThrowDie_Click(object sender, RoutedEventArgs e)
         {
-            //Die returns a number
-            int eyes = Die.ThrowDice();
-
-            //Write eyes to view
-            die.Content = eyes;
-
-            //Move the Player
-            player.MovePlayer(eyes);
-
-            //Animate the player movement
-            this.AnimatePlayerMovement(player, eyes);
-
         }
-
+        private void MovePiece_Click(object sender, RoutedEventArgs e)
+        {
+        }
+        
         private void AnimatePlayerMovement(Player player, int eyes)
         {
-            //This will hold hour animation
-            Piece.RenderTransform = new CompositeTransform();
-
-            //New storyboard
-            Storyboard storyboard = new Storyboard();
-
-            //New DoubleAnimation - Y
-            DoubleAnimation translateYAnimation = new DoubleAnimation();
-            translateYAnimation.From = this.Path[player.position - eyes, 1];
-            translateYAnimation.To = this.Path[player.position, 1];
-
-            translateYAnimation.EasingFunction = new ExponentialEase();
-            translateYAnimation.EasingFunction.EasingMode = EasingMode.EaseOut;
-            translateYAnimation.Duration = new Duration(TimeSpan.FromMilliseconds(500));
-            Storyboard.SetTarget(translateYAnimation, Piece);
-            Storyboard.SetTargetProperty(translateYAnimation, "(UIElement.RenderTransform).(CompositeTransform.TranslateY)");
-            storyboard.Children.Add(translateYAnimation);
-
-            //New DoubleAnimation - X 
-            DoubleAnimation translateXAnimation = new DoubleAnimation();
-
-            translateXAnimation.From = this.Path[player.position - eyes, 0];
-            translateXAnimation.To = this.Path[player.position, 0];
-
-            //translateXAnimation.From = this.Path[player.position - eyes, 0];
-            //translateXAnimation.To = this.Path[player.position, 0];
-            translateXAnimation.Duration = new Duration(TimeSpan.FromMilliseconds(500));
-
-            Storyboard.SetTarget(translateXAnimation, Piece);
-            Storyboard.SetTargetProperty(translateXAnimation, "(UIElement.RenderTransform).(CompositeTransform.TranslateX)");
-
-            storyboard.Children.Add(translateXAnimation);
-
-            //executing the storyboard
-            storyboard.Begin();
-
-
-
         }
 
         private void StartGame_Click(object sender, RoutedEventArgs e)
         {
-            //New list of plaers
-            players = new List<Player>();
-            if (PlayerNumb != null)
-            {
-                //Start game
-                for (int i = 0; i < Int32.Parse(PlayerNumb.Text); i++)
-                {
-                    this.players.Add(new Player(this.Path));
-
-                }
-
-            }
-            //Place markers on the board
-
-            //Start game
-
-            // New up x numbers of players
-            // Animate marker for each player
-            // Set player 1 start
         }
+        private void InitPiece() { }
     }
 }

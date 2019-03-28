@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace App1
 {
-    static class Die
+    public class Dilemma
     {
-        static public int eyes { get; set; }
-
-        static public int ThrowDice()
-        {
-            return 1;
-        }
     }
 }
